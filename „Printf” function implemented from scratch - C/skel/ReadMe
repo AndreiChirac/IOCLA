@@ -1,0 +1,35 @@
+		Initial abordarea mea a constat in decuparea sirului cu strtok doar ca 
+		in momentul aparitiei unor secvente precum "Ana are %d mere " aparea 
+		problema ca pierdeam partea de dinainte asa ca am decis ca este mult mai
+		simplu sa ma plimb prin stringul oferit cu un pointer fara sa sparg in 
+		bucati sirul . Stim ca partea importanta din printf se refera la secventa
+		"%argument" astfel am cautat cu ajutorul lui strstr unde apare simbolul
+		"%" . In acest punct am realizat ca se poate intampla ca dupa % sa urmeze 
+		caractere cum ar fi % ceea ce a dus la cazul in care vom transforma o 
+		secventa de tipul %% intr-un singur % , iar pentru ca strstr sa nu 
+		gaseasca "%" provenit din "%%" ii vom da skip cu ajutorul unui pointer
+		update care se ocupa si de localizarea lui "%" . Aceasta problema fiind 
+		rezolvata stim ca urmatorul caracter ne va indica felul in care trebuie
+		printat numarul , caracterul sau sirul . Astfel copiem in help secventa
+		"%argument" astfel vom sti in ce situatie ne aflam . In acest punct am 
+		intampinat problema necesitatii numerelor in formatul string , aveam 
+		nevoie de o functie capabila sa transforme un numar intr-un string astfel 
+		am facut putin research si am vazut ca exista o astfel de functie care
+		se numeste itoa (https://www.geeksforgeeks.org/implement-itoa/ ) . Am
+		preluat aceasta functie si am adaptat-o la nevoile mele in sensul in care 
+		daca la aparitia unui numar negativ se doreste printarea cu "%d" acesta
+		sa fie convertit la valoarea lui pozitiva transformat in sir ca mai apoi 
+		sa primeasca un '-' . Documentatia ofera informatia ca stringul care 
+		reiese dupa conversie este invesat asa ca exista si o functie de 
+		reverse care preia elementul de la inceput si il interschimba cu cel de 
+		la final aceasta operatie realizandu-se catre interiorul sirului pana 
+		cand se ajunge ca stringul sa fie sortat . Itoa are drept principu 
+		impartirea succesiva la baza ofeita de noi obtinandu-se astfel cifre 
+		individuale in ascii de la cea mai nesemnificativa la cea mai semnificativa 
+		de aceea avem nevoie si de funcita reverse  . Dupa conversia numarului la 
+		string putem sa inlocuim "%argument" cu sirul obtiunt astfel se copiaza 
+		intr-un auxiliar tot ce se afla dupa "%argument" , se copiaza in locul lui
+		"%argument" stringul care reprezinta numarul dorit , iar mai apoi se 
+		concateneaza sirul aflat in auxiliar la sirul proaspat modificat . Astfel
+		se realizeaza procesul de pritnf. 
+
