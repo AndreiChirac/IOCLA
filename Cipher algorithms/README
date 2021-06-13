@@ -1,0 +1,51 @@
+Task 1 :
+	
+	La primul task stiind ca registul ecx in care este stocat lungimea 
+	celor doua componente are rolul unui index , am parcurs fiecare 
+	componenta a textului am realizat operatia logica xor cu componenta
+	aflata la acelasi index din key , rezultatul obtinut fiind plasast 
+	in ciphertext 
+
+Task 2 :
+	
+	La cel de-al doilea task am avut in vedere faptul mai multe notiuni.
+	Putem sa micsoram cheia inca de la inceput pt a ne fi mai usor 
+	deoarece stim ca alfabetul are doar 26 de litere astfel o valoare mai
+	mare ar duce la o parcurgere total.(In ascii nu exista valori mai mari de 127 astfel nu mai putem compara) . Faptul ca daca caracterul nu se afla intre 65 si 90 sau 97 si 122 nueste o litera asa ca trebuie sa-i dam skip. Am avut in vedere si faptul ca dupa adunarea cu cheia litera poatesa depaseasca alfabetul si trebuie sa-l reiau . Sa am grija la registul ecx caci acesta nu se mai autodecrementeaza in momentul in care am iesit din loopul principal .   
+
+Task 3:
+	
+	Taskul 3 este o extindere a Taskului 2 ,pentru a imi simplifica munca 
+	am realizat modificarea cheii inca de la inceput astfel incat cheia
+	mea sa fie constituita din numerele care imi indica deplasarea .Apoi
+	parcurg ambele siruri in acelasi timp ,iar in momentul in care am dat 
+	peste un caracter care nu este litera incrementez doar contorul care 
+	se ocupa de parcurgerea prin text . In acelasi timp stim si ca daca 
+	cel de-al doilea contor a ajus la pozitia finala trebuie luat de la 
+	capat . Principiul ulterior este ca cel de la Task 2 .
+
+Task 4:
+	
+	Task 4 are o implementare care se bazeaza pe faptul ca in momentul in
+	care pargurgem textul si verificam fiecare element din acesta sa 
+	corespunda cu caracterele din pattern-ul pe care il cautam , vom ajunge 
+	in situatia in care am ajuns la finalul textului si asta insemna ca nu 
+	s-a gasit nimic , sau contorul care tine cont de lungime needelului va
+	fi egala ceea ce ne va sugera ca am parcurs o secventa care a facut match
+	astfel stim ca indexul care indica prima aparitie se va referi la pozitia indicata de unde a ajuns contorul textului minus dimensiunea patternului pe care il cautam .
+
+Task 5:
+	
+	Stim ca un numar pentru a fi transformat din binar in hexadecimal 
+	trece prin procesul de a fi separat secvente de cate 4 biti , 
+	astfel vom avea un registru care sa se ocupe de contorizarea celor 
+	4 biti , si ne permite sa stim care este puterea care va fi adugata
+	in rezultatul nostru pentru a obtine valoarea dorita.Dupa obtinerea
+	valorii numeric avem nevoie de o transformare astfel stim ca 
+	reprezentare hexadecimala are atat numere de la 0 la 9 cat si litere 
+	de la A la F astfel stim ca daca rezultatul obtinut este mai mic ca 9
+	este o cifra si pentru a fi convertita la caracter trebuie adaugat 48
+	(este 0 in ascii ) altfel conversia se realizeaza prin adaugarea nr 55
+	(este A in ascii). Astfel stim ca un nr in hexa poate avea doar 8 pozitii astfel in functie de indexul care are in vedere secventa binara 
+	vom scrie si noi in memorie elementul la pozitia corespunzaotare.Aceasta
+	metoda este aplicata si pentru punerea caracterului '\n'. 
